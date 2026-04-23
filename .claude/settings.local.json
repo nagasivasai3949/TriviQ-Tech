@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx next *)",
+      "Bash(curl -sL -o - -w \"\\\\n[HTTP %{http_code}]\\\\n\" \"https://script.google.com/macros/s/AKfycbypSI5NdSXYooHZ5pufcrntZjIrsiCHGp0wFK4EqTk35q8de-skshiTspz-z2_eT69R4g/exec\")"
+    ]
+  }
+}
