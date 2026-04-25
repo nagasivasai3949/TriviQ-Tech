@@ -12,14 +12,14 @@ export default function PrivacyPage() {
   return (
     <main>
       <Navbar />
-      <article className="max-w-3xl mx-auto px-5 sm:px-8 pt-32 pb-20 prose-invert">
-        <span className="inline-block text-xs font-semibold tracking-widest text-brand-teal uppercase">
+      <article className="max-w-3xl mx-auto px-5 sm:px-8 pt-32 pb-20">
+        <span className="inline-block text-xs font-semibold tracking-widest text-brand-primary uppercase">
           Privacy
         </span>
-        <h1 className="mt-3 font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
+        <h1 className="mt-3 font-display text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
           What we collect <span className="gradient-text">and why.</span>
         </h1>
-        <p className="mt-5 text-slate-300 leading-relaxed">
+        <p className="mt-5 text-slate-600 leading-relaxed">
           TriviqTech respects your privacy. This page explains in plain terms
           what data we collect when you visit this website, why we collect it,
           and how you can request its removal.
@@ -74,10 +74,10 @@ export default function PrivacyPage() {
             access to data we hold about you, correction, deletion, restriction
             of processing, portability, or withdrawal of consent. Email{" "}
             <a
-              href="mailto:saipraneethtalluri@gmail.com"
-              className="text-brand-teal hover:text-white"
+              href="mailto:contact@triviqtech.com"
+              className="text-brand-primary hover:text-brand-primaryDark"
             >
-              saipraneethtalluri@gmail.com
+              contact@triviqtech.com
             </a>{" "}
             and we will respond within 30 days.
           </p>
@@ -124,8 +124,8 @@ export default function PrivacyPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
-      <h2 className="font-display text-xl sm:text-2xl font-bold text-white">{title}</h2>
-      <div className="mt-3 space-y-3 text-slate-300 leading-relaxed text-[15px] [&_ul]:mt-2 [&_ul]:space-y-1.5 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:text-slate-400 [&_a]:text-brand-teal [&_a:hover]:text-white [&_code]:rounded [&_code]:bg-white/5 [&_code]:border [&_code]:border-white/10 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-xs">
+      <h2 className="font-display text-xl sm:text-2xl font-bold text-slate-900">{title}</h2>
+      <div className="mt-3 space-y-3 text-slate-700 leading-relaxed text-[15px] [&_ul]:mt-2 [&_ul]:space-y-1.5 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:text-slate-600 [&_a]:text-brand-primary [&_a:hover]:text-brand-primaryDark [&_code]:rounded [&_code]:bg-slate-100 [&_code]:border [&_code]:border-slate-200 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-xs [&_code]:text-slate-800 [&_strong]:text-slate-900">
         {children}
       </div>
     </section>

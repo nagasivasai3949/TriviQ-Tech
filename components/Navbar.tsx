@@ -5,10 +5,9 @@ import Logo from "./Logo";
 
 const links = [
   { href: "#services", label: "Services" },
-  { href: "#approach", label: "Approach" },
-  { href: "#projects", label: "Projects" },
+  { href: "#approach", label: "How We Work" },
+  { href: "#projects", label: "Work" },
   { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -24,23 +23,23 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-brand-ink/80 backdrop-blur-md border-b border-white/10"
+          ? "bg-white/80 backdrop-blur-xl border-b border-slate-200/70 shadow-soft"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16 md:h-[72px]">
         <a href="#home" aria-label="TriviqTech home">
-          <Logo size={34} />
+          <Logo size={32} />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
+        <nav className="hidden md:flex items-center gap-1" aria-label="Primary">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+              className="relative px-4 py-2 text-[13px] font-medium text-slate-600 hover:text-brand-primary transition-colors rounded-lg hover:bg-slate-900/[0.04]"
             >
               {l.label}
             </a>
@@ -49,18 +48,27 @@ export default function Navbar() {
 
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center rounded-full bg-brand-gradient px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-teal/20 hover:shadow-brand-teal/40 hover:-translate-y-0.5 transition"
+          className="hidden md:inline-flex items-center gap-2 rounded-full bg-brand-cta px-5 py-2 text-[13px] font-semibold text-white shadow-cta hover:shadow-cta-lg hover:bg-brand-ctaDark hover:-translate-y-0.5 transition-all"
         >
-          Start a project
+          <span className="h-1.5 w-1.5 rounded-full bg-white/90 animate-pulse" />
+          Get in touch
         </a>
 
         <button
-          className="md:hidden text-white p-2"
+          className="md:hidden text-slate-700 p-2 rounded-lg hover:bg-slate-900/[0.05] transition"
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
             {open ? (
               <>
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -68,9 +76,9 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
+                <line x1="4" y1="7" x2="20" y2="7" />
+                <line x1="4" y1="12" x2="16" y2="12" />
+                <line x1="4" y1="17" x2="20" y2="17" />
               </>
             )}
           </svg>
@@ -79,28 +87,30 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ${
-          open ? "max-h-96" : "max-h-0"
-        } bg-brand-ink/95 border-b border-white/10`}
+        className={`md:hidden transition-all duration-300 overflow-hidden ${
+          open ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+        } bg-white/95 backdrop-blur-xl border-b border-slate-200/70`}
       >
-        <nav className="px-5 py-4 flex flex-col gap-4" aria-label="Mobile">
+        <nav className="px-5 py-5 flex flex-col gap-1" aria-label="Mobile">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-slate-300 hover:text-white font-medium"
+              className="text-slate-700 hover:text-brand-primary font-medium py-2.5 px-3 rounded-lg hover:bg-slate-900/[0.04] transition"
             >
               {l.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
-            className="rounded-full bg-brand-gradient px-5 py-3 text-center text-sm font-semibold text-white"
-          >
-            Start a project
-          </a>
+          <div className="mt-2 pt-3 border-t border-slate-200">
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-center gap-2 rounded-full bg-brand-cta px-5 py-3 text-sm font-semibold text-white shadow-cta"
+            >
+              Get in touch
+            </a>
+          </div>
         </nav>
       </div>
     </header>
