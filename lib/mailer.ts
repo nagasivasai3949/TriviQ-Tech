@@ -4,8 +4,7 @@ const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 
 export const MAIL_RECIPIENTS = [
-  "saipraneethtalluri@gmail.com",
-  "sivasaipersonal1@gmail.com",
+  "contact@triviqtech.com",
 ];
 
 export function isMailerConfigured(): boolean {

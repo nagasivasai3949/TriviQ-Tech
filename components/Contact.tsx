@@ -57,75 +57,93 @@ export default function Contact() {
         throw new Error(json.error || "request_failed");
       }
       setStatus("sent");
-      setNote("Thanks! We'll reply within one business day.");
+      setNote("Thanks! We'll be in touch within one business day.");
       form.reset();
     } catch {
       setStatus("error");
-      setNote("Something went wrong. Please email saipraneethtalluri@gmail.com.");
+      setNote("Something went wrong. Please email contact@triviqtech.com directly.");
     }
   }
 
   return (
-    <section id="contact" className="py-24 md:py-32 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-8 md:p-14 overflow-hidden">
-          <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-teal/20 blur-3xl" />
-          <div className="absolute -bottom-32 -right-16 h-80 w-80 rounded-full bg-brand-deep/30 blur-3xl" />
+    <section id="contact" className="py-24 md:py-32 section-glow bg-brand-paper">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="relative rounded-3xl border border-slate-200/80 bg-white p-8 md:p-14 overflow-hidden shadow-soft-lg">
+          {/* Ambient glows */}
+          <div className="absolute -top-32 -left-32 h-72 w-72 rounded-full bg-brand-accent/5 blur-[100px]" />
+          <div className="absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-brand-primary/5 blur-[100px]" />
 
           <div className="relative grid gap-10 lg:grid-cols-2 items-start">
+            {/* Left — Info */}
             <div>
-              <span className="inline-block text-xs font-semibold tracking-widest text-brand-teal uppercase">
-                Let's build
+              <span className="inline-block text-[11px] font-semibold tracking-[0.15em] text-brand-accent uppercase">
+                Start a conversation
               </span>
-              <h2 className="mt-3 font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
-                Have an idea <span className="gradient-text">worth shipping?</span>
+              <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-slate-900 leading-[1.15]">
+                Got a project?{" "}
+                <span className="gradient-text">Let&apos;s talk.</span>
               </h2>
-              <p className="mt-5 text-slate-300 leading-relaxed max-w-md">
-                Tell us about your project. We'll reply within one business day
-                with next steps — no sales runaround.
+              <p className="mt-5 text-slate-600 leading-relaxed max-w-md">
+                Tell us what you&apos;re building. We&apos;ll get back to you
+                within one business day with honest feedback and next steps.
               </p>
 
               <div className="mt-8 space-y-4 text-sm">
-                <div className="flex items-start gap-3 text-slate-300">
-                  <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-lg bg-white/5 border border-white/10 text-brand-teal">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <div className="flex items-center gap-3 text-slate-700">
+                  <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-lg bg-cyan-50 border border-slate-100 text-brand-accent">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
                   </span>
-                  <div className="flex flex-col gap-1">
-                    <a href="mailto:saipraneethtalluri@gmail.com" className="hover:text-white">saipraneethtalluri@gmail.com</a>
-                    <a href="mailto:sivasaipersonal1@gmail.com" className="hover:text-white">sivasaipersonal1@gmail.com</a>
-                  </div>
+                  <a href="mailto:contact@triviqtech.com" className="hover:text-brand-primary transition-colors">
+                    contact@triviqtech.com
+                  </a>
                 </div>
-                <div className="flex items-start gap-3 text-slate-300">
-                  <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-lg bg-white/5 border border-white/10 text-brand-teal">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+
+                <div className="flex items-center gap-3 text-slate-500">
+                  <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-lg bg-cyan-50 border border-slate-100 text-brand-accent">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="2" y1="12" x2="22" y2="12" />
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
                   </span>
-                  <div className="flex flex-col gap-1">
-                    <a href="tel:+919030233949" className="hover:text-white">+91 90302 33949</a>
-                    <a href="tel:+917013083537" className="hover:text-white">+91 70130 83537</a>
-                  </div>
+                  <span>Remote-first · Serving US, UK & India</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-300">
-                  <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-lg bg-white/5 border border-white/10 text-brand-teal">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+
+                {/* Trust signals — reduce commitment friction */}
+                <div className="pt-3 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-soft">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    Reply in &lt; 1 day
                   </span>
-                  <span>Remote-first · Serving clients worldwide</span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-soft">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+                    No sales call required
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-soft">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
+                    Free first consult
+                  </span>
                 </div>
               </div>
             </div>
 
+            {/* Right — Form */}
             <form onSubmit={onSubmit} className="space-y-4" noValidate>
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Name" name="name" required placeholder="Your full name" />
+                <Field label="Name" name="name" required placeholder="Your name" />
                 <Field label="Email" name="email" type="email" required placeholder="you@company.com" />
               </div>
               <Field label="What do you need?" name="service" as="select">
-                <option className="bg-brand-ink text-white">Web & Product Engineering</option>
-                <option className="bg-brand-ink text-white">AI / Machine Learning</option>
-                <option className="bg-brand-ink text-white">Cloud & DevOps</option>
-                <option className="bg-brand-ink text-white">Not sure — help me figure it out</option>
+                <option>Web & Product Engineering</option>
+                <option>AI / Machine Learning</option>
+                <option>Cloud & DevOps</option>
+                <option>Not sure yet — help me figure it out</option>
               </Field>
               <Field
-                label="Project details"
+                label="Tell us about your project"
                 name="message"
                 as="textarea"
                 required
@@ -135,14 +153,20 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full rounded-full bg-brand-gradient px-6 py-3.5 font-semibold text-white shadow-xl shadow-brand-teal/20 hover:shadow-brand-teal/50 hover:-translate-y-0.5 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                className="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-brand-cta px-6 py-3.5 font-semibold text-white shadow-cta hover:shadow-cta-lg hover:bg-brand-ctaDark hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {status === "sending" ? "Sending..." : "Send message"}
+                {status !== "sending" && (
+                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                )}
               </button>
               {note && (
                 <p
                   className={`text-sm ${
-                    status === "error" ? "text-red-300" : "text-brand-teal"
+                    status === "error" ? "text-red-500" : "text-brand-accent"
                   }`}
                   aria-live="polite"
                 >
@@ -169,17 +193,17 @@ type FieldProps = {
 
 function Field({ label, name, type = "text", required, placeholder, as = "input", children }: FieldProps) {
   const base =
-    "w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-brand-teal/60 focus:bg-white/[0.06] transition";
+    "w-full rounded-xl border border-slate-200 bg-brand-ivory px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-brand-primary/40 focus:ring-2 focus:ring-brand-primary/10 transition-all";
   return (
     <label className="block">
-      <span className="block text-xs font-medium text-slate-300 mb-1.5">{label}</span>
+      <span className="block text-xs font-medium text-slate-600 mb-1.5">{label}</span>
       {as === "textarea" ? (
         <textarea name={name} required={required} placeholder={placeholder} rows={4} className={base} />
       ) : as === "select" ? (
         <div className="relative">
           <select
             name={name}
-            className={`${base} appearance-none pr-11 cursor-pointer [&>option]:bg-brand-ink [&>option]:text-white`}
+            className={`${base} appearance-none pr-11 cursor-pointer`}
           >
             {children}
           </select>

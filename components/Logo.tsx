@@ -2,15 +2,18 @@ type Props = {
   className?: string;
   showWordmark?: boolean;
   size?: number;
+  onDark?: boolean;
 };
 
 export default function Logo({
   className = "",
   showWordmark = true,
   size = 36,
+  onDark = false,
 }: Props) {
+  const tColor = onDark ? "#F8FAFC" : "#0F172A";
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`flex items-center gap-2.5 ${className}`}>
       <svg
         width={size}
         height={size}
@@ -20,19 +23,37 @@ export default function Logo({
       >
         <defs>
           <linearGradient id="tq-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#2DD4DB" />
-            <stop offset="100%" stopColor="#1E3A8A" />
+            <stop offset="0%" stopColor="#0891B2" />
+            <stop offset="100%" stopColor="#1E40AF" />
           </linearGradient>
+          <filter id="tq-glow">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
         {/* T bar */}
-        <rect x="10" y="8" width="22" height="8" rx="1.5" fill="#F8FAFC" />
-        <rect x="17" y="8" width="8" height="34" rx="1.5" fill="#F8FAFC" />
-        {/* Play arrow */}
-        <path d="M26 14 L54 32 L26 50 Z" fill="url(#tq-grad)" />
+        <rect x="8" y="10" width="24" height="7" rx="2" fill={tColor} />
+        <rect x="16" y="10" width="8" height="32" rx="2" fill={tColor} />
+        {/* Play arrow with glow */}
+        <path
+          d="M28 16 L52 32 L28 48 Z"
+          fill="url(#tq-grad)"
+          filter="url(#tq-glow)"
+        />
       </svg>
       {showWordmark && (
-        <span className="font-display text-xl font-bold tracking-tight text-white">
-          Triviq<span className="text-brand-teal">Tech</span>
+        <span
+          className={`font-display text-xl font-bold tracking-tight ${
+            onDark ? "text-white" : "text-slate-900"
+          }`}
+        >
+          Triviq
+          <span className={onDark ? "text-cyan-300" : "text-brand-accent"}>
+            Tech
+          </span>
         </span>
       )}
     </div>

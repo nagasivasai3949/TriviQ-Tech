@@ -1,22 +1,24 @@
 const items = [
-  "React", "Next.js", "Node.js", "Python", "Go",
-  "TensorFlow", "PyTorch", "LangChain", "OpenAI", "Claude",
-  "AWS", "Azure", "GCP", "Kubernetes", "Docker",
-  "PostgreSQL", "MongoDB", "Redis", "Terraform", "GraphQL",
+  "React", "Next.js", "Node.js", "Python",
+  "TensorFlow", "LangChain", "OpenAI",
+  "AWS", "Kubernetes", "Docker",
+  "PostgreSQL", "Redis", "Terraform",
 ];
 
 export default function Marquee() {
   return (
-    <section className="py-10 border-y border-white/5 bg-white/[0.02]" aria-hidden="true">
+    <section
+      className="py-8 border-y border-slate-200/60 bg-white/50"
+      aria-hidden="true"
+    >
       <div className="marquee-mask overflow-hidden">
-        <div className="flex gap-10 animate-marquee whitespace-nowrap w-max">
+        <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">
           {[...items, ...items].map((item, i) => (
             <span
               key={i}
-              className="font-display text-lg md:text-xl font-medium text-slate-500 hover:text-brand-teal transition-colors"
+              className="font-display text-sm md:text-base font-medium text-slate-400 hover:text-brand-accent transition-colors tracking-wide uppercase"
             >
               {item}
-              <span className="ml-10 text-slate-700">●</span>
             </span>
           ))}
         </div>

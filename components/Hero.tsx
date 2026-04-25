@@ -1,128 +1,154 @@
-const trust = [
-  { label: "Newark Truck Center", flag: "🇺🇸", href: "https://www.newarktruckcenter.com/" },
-  { label: "Zoomgroc", flag: "🇬🇧", href: "https://zoomgroc.com" },
-  { label: "Skillnaav", flag: "🇮🇳" },
+const clients = [
+  {
+    name: "Newark Truck Center",
+    type: "Dealership · US",
+    href: "https://www.newarktruckcenter.com/",
+  },
+  {
+    name: "Zoomgroc",
+    type: "Fast-commerce · UK",
+    href: "https://zoomgroc.com",
+  },
+  {
+    name: "Skillnaav",
+    type: "Ed-tech · India",
+  },
 ];
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-28"
+      className="relative overflow-hidden pt-28 md:pt-36 pb-20 md:pb-28"
     >
+      {/* Background elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 grid-pattern opacity-60" />
-        <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-brand-teal/20 blur-3xl animate-float-slow" />
-        <div className="absolute -bottom-40 -right-20 w-[620px] h-[620px] rounded-full bg-brand-deep/30 blur-3xl animate-float-slow" />
+        <div className="absolute inset-0 grid-pattern opacity-40" />
+        <div className="absolute -top-32 left-[10%] w-[400px] h-[400px] rounded-full bg-brand-accent/8 blur-[100px] animate-pulse-glow" />
+        <div className="absolute top-[40%] -right-20 w-[500px] h-[500px] rounded-full bg-brand-primary/8 blur-[120px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium tracking-widest text-brand-teal uppercase animate-fade-up">
-          <span className="h-1.5 w-1.5 rounded-full bg-brand-teal animate-pulse" />
-          Trusted across US · UK · India
-        </span>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        {/* Two-column hero on desktop */}
+        <div className="grid lg:grid-cols-[1fr_0.8fr] gap-12 lg:gap-16 items-center">
+          {/* Left — Text */}
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-1.5 text-xs font-medium text-slate-500 animate-fade-up shadow-soft">
+              <span className="glow-dot" />
+              Shipping production software since 2023
+            </div>
 
-        <h1
-          className="mt-6 font-display text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white animate-fade-up"
-          style={{ animationDelay: "0.1s" }}
-        >
-          We ship the software
-          <br className="hidden sm:block" />{" "}
-          <span className="gradient-text">that grows your business.</span>
-        </h1>
+            <h1
+              className="mt-7 font-display text-[2.5rem] sm:text-[3.25rem] lg:text-[3.75rem] font-bold leading-[1.1] tracking-tight text-slate-900 animate-fade-up"
+              style={{ animationDelay: "0.1s" }}
+            >
+              We build the software{" "}
+              <span className="gradient-text">your business actually needs.</span>
+            </h1>
 
-        <p
-          className="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-slate-300 leading-relaxed animate-fade-up"
-          style={{ animationDelay: "0.2s" }}
-        >
-          From a truck dealership in New Jersey to fast-commerce in the UK and
-          an ed-tech platform in India — TriviqTech designs, builds, and scales
-          production-grade{" "}
-          <span className="text-white font-semibold">Web</span>,{" "}
-          <span className="text-white font-semibold">AI</span>, and{" "}
-          <span className="text-white font-semibold">Cloud</span> products for
-          founders who need it shipped right the first time.
-        </p>
+            <p
+              className="mt-6 max-w-lg text-base sm:text-lg text-slate-600 leading-relaxed animate-fade-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Web apps, AI integrations, cloud infrastructure — designed and
+              shipped by engineers who own the outcome from first commit to
+              production.
+            </p>
 
-        <div
-          className="mt-8 flex flex-wrap items-center justify-center gap-4 animate-fade-up"
-          style={{ animationDelay: "0.3s" }}
-        >
-          <a
-            href="#contact"
-            className="inline-flex items-center rounded-full bg-brand-gradient px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-brand-teal/20 hover:shadow-brand-teal/50 hover:-translate-y-0.5 transition"
-          >
-            Book a free 30-min scoping call
-          </a>
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/10 hover:border-white/25 transition"
-          >
-            See live client work
-            <span aria-hidden>→</span>
-          </a>
-        </div>
-
-        <p
-          className="mt-4 text-xs text-slate-500 animate-fade-up"
-          style={{ animationDelay: "0.35s" }}
-        >
-          Reply within 1 business day · No sales runaround · NDA on request
-        </p>
-
-        {/* Trust strip */}
-        <div
-          className="mt-14 animate-fade-up"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <div className="text-[11px] font-semibold tracking-widest text-slate-500 uppercase">
-            Products we&apos;ve shipped for clients
+            <div
+              className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-cta px-6 py-3 text-sm font-semibold text-white shadow-cta hover:shadow-cta-lg hover:bg-brand-ctaDark hover:-translate-y-0.5 transition-all"
+              >
+                Let&apos;s talk about your project
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-6 py-3 text-sm font-medium text-slate-700 hover:text-brand-primary hover:bg-white hover:border-brand-primary/20 hover:shadow-soft transition-all"
+              >
+                See our work
+              </a>
+            </div>
           </div>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            {trust.map((t) =>
-              t.href ? (
-                <a
-                  key={t.label}
-                  href={t.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-slate-300 hover:text-white hover:border-brand-teal/40 hover:bg-white/[0.06] transition"
+
+          {/* Right — Visual element */}
+          <div
+            className="relative hidden lg:block animate-fade-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <div className="relative aspect-square max-w-md mx-auto">
+              {/* Orbiting rings */}
+              <div className="absolute inset-8 rounded-full border border-slate-200/60 animate-spin-slow" />
+              <div className="absolute inset-16 rounded-full border border-brand-accent/15 animate-spin-slow" style={{ animationDirection: "reverse" }} />
+              <div className="absolute inset-24 rounded-full border border-brand-primary/10" />
+
+              {/* Center glow */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="h-24 w-24 rounded-full bg-brand-accent/12 blur-2xl animate-pulse-glow" />
+                <div className="absolute h-3 w-3 rounded-full bg-brand-accent shadow-glow" />
+              </div>
+
+              {/* Floating tags */}
+              {[
+                { label: "Full Stack", pos: "top-4 left-1/2 -translate-x-1/2", delay: "0s" },
+                { label: "AI / ML", pos: "bottom-8 left-4", delay: "0.6s" },
+                { label: "Cloud", pos: "bottom-8 right-4", delay: "1.2s" },
+              ].map((tag) => (
+                <div
+                  key={tag.label}
+                  className={`absolute ${tag.pos} rounded-xl border border-slate-200 bg-white/90 backdrop-blur-sm px-4 py-2.5 text-center animate-float-slow shadow-soft`}
+                  style={{ animationDelay: tag.delay }}
                 >
-                  <span className="text-base leading-none">{t.flag}</span>
-                  <span className="font-medium">{t.label}</span>
-                </a>
-              ) : (
-                <span
-                  key={t.label}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-slate-400"
-                >
-                  <span className="text-base leading-none">{t.flag}</span>
-                  <span className="font-medium">{t.label}</span>
-                  <span className="rounded-full bg-amber-500/15 border border-amber-400/30 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-amber-300 uppercase">
-                    Stealth
-                  </span>
-                </span>
-              )
-            )}
+                  <div className="font-display text-sm font-semibold text-slate-800">{tag.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
+        {/* Client strip */}
         <div
-          className="mt-14 grid grid-cols-3 gap-6 max-w-xl mx-auto animate-fade-up"
+          className="mt-16 lg:mt-20 animate-fade-up"
           style={{ animationDelay: "0.5s" }}
         >
-          {[
-            { n: "3", l: "Countries served" },
-            { n: "<1d", l: "Reply time" },
-            { n: "100%", l: "Senior-led" },
-          ].map((s) => (
-            <div key={s.l} className="text-center">
-              <div className="font-display text-2xl sm:text-3xl font-bold gradient-text">
-                {s.n}
-              </div>
-              <div className="mt-1 text-xs sm:text-sm text-slate-400">{s.l}</div>
+          <div className="shimmer-line mb-8" />
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
+            <span className="text-[11px] font-semibold tracking-[0.15em] text-slate-400 uppercase whitespace-nowrap">
+              Trusted by
+            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              {clients.map((c) => (
+                <span key={c.name} className="group">
+                  {c.href ? (
+                    <a
+                      href={c.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm text-slate-600 hover:text-brand-primary hover:border-brand-primary/20 hover:bg-white hover:shadow-soft transition-all"
+                    >
+                      <span className="font-medium">{c.name}</span>
+                      <span className="text-[10px] text-slate-400">{c.type}</span>
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm text-slate-500">
+                      <span className="font-medium">{c.name}</span>
+                      <span className="text-[10px]">{c.type}</span>
+                      <span className="rounded-full bg-amber-50 border border-amber-200 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-amber-600 uppercase">
+                        Soon
+                      </span>
+                    </span>
+                  )}
+                </span>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
