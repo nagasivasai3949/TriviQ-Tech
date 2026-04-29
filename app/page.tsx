@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import CaseStudy from "@/components/CaseStudy";
 import Marquee from "@/components/Marquee";
 import Services from "@/components/Services";
 import Approach from "@/components/Approach";
@@ -16,6 +17,7 @@ export default function Home() {
       <VisitBeacon />
       <Navbar />
       <Hero />
+      <CaseStudy />
       <Marquee />
       <Services />
       <Approach />
