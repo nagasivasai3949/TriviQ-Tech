@@ -1,3 +1,5 @@
+import { CALENDLY_URL } from "@/lib/site";
+
 const clients = [
   {
     name: "Newark Truck Center",
@@ -42,8 +44,9 @@ export default function Hero() {
               className="mt-7 font-display text-[2.5rem] sm:text-[3.25rem] lg:text-[3.75rem] font-bold leading-[1.1] tracking-tight text-slate-900 animate-fade-up"
               style={{ animationDelay: "0.1s" }}
             >
-              We build the software{" "}
-              <span className="gradient-text">your business actually needs.</span>
+              We build{" "}
+              <span className="gradient-text">custom tech products</span>{" "}
+              for businesses.
             </h1>
 
             <p
@@ -60,17 +63,19 @@ export default function Hero() {
               style={{ animationDelay: "0.3s" }}
             >
               <a
-                href="#contact"
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-brand-cta px-6 py-3 text-sm font-semibold text-white shadow-cta hover:shadow-cta-lg hover:bg-brand-ctaDark hover:-translate-y-0.5 transition-all"
               >
-                Let&apos;s talk about your project
+                Book a free 30-min call
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
               </a>
               <a
-                href="#projects"
+                href="#case-study"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-6 py-3 text-sm font-medium text-slate-700 hover:text-brand-primary hover:bg-white hover:border-brand-primary/20 hover:shadow-soft transition-all"
               >
                 See our work
